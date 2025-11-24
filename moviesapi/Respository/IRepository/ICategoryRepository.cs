@@ -6,6 +6,7 @@ namespace moviesapi.Repository.Irepository
     {
         Task<ICollection<Category>> GetAllCategoriesAsync();
         Task<Category?> GetCategoryByIdAsync(int categoryId);
+        Task<Category?> GetCategoryByNameAsync(string name);
         Task<bool> CreateCategoryAsync(Category category);
         Task<bool> UpdateCategoryAsync(Category category);
         Task<bool> DeleteCategoryAsync(int categoryId);

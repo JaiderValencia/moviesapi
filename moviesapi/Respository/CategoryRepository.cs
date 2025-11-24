@@ -62,6 +62,13 @@ namespace moviesapi.Repository
             return category;
         }
 
+        public async Task<Category?> GetCategoryByNameAsync(string name)
+        {
+            var category = await _context.Categories.AsNoTracking().FirstOrDefaultAsync(c => c.Name.Equals(name));
+
+            return category;
+        }
+
         public async Task<bool> UpdateCategoryAsync(Category category)
         {
 
