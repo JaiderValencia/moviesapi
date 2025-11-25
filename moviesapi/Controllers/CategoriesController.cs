@@ -24,7 +24,7 @@ namespace moviesapi.Controllers
             return Ok(categories);
         }
 
-        [HttpGet("{categoryId:int}", Name = "GetCategoryById")]
+        [HttpGet("id/{categoryId:int}", Name = "GetCategoryById")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -43,7 +43,7 @@ namespace moviesapi.Controllers
             }
         }
 
-        [HttpGet("{CategoryName}", Name = "GetCategoryByName")]
+        [HttpGet("name/{CategoryName}", Name = "GetCategoryByName")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

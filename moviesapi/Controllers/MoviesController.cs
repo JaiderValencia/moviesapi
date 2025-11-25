@@ -52,19 +52,18 @@ namespace moviesapi.Controllers
             }
         }
 
-        [HttpGet("name/{name}", Name = "GetMovieByName")]
+        [HttpGet("name/{movieName}", Name = "GetMovieByName")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<MovieDto>> GetMovieByName(string name)
+        public async Task<ActionResult<MovieDto>> GetMovieByName(string movieName)
         {
             try
             {
-                var movie = await _movieService.GetMovieByNameAsync(name);
+                var movie = await _movieService.GetMovieByNameAsync(movieName);
 
                 if (movie == null)
-                    return NotFound($"Movie with name '{name}' not found.");
-
+                    return NotFound($"Movie with name '{movieName}' not found.");
                 return Ok(movie);
             }
             catch (Exception ex)
