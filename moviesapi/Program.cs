@@ -15,9 +15,11 @@ builder.Services.AddAutoMapper(config => config.AddProfile<Mapper>());
 
 // inject services
 builder.Services.AddScoped<IcategoryService, CategoryService>();
+builder.Services.AddScoped<IMovieService, MovieService>();
 
 // inject repositories
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
