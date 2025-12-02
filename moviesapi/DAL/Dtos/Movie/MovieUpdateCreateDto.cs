@@ -5,7 +5,7 @@ namespace moviesapi.DAL.Dtos.Movie
     public class MovieUpdateCreateDto
     {
         [Required(ErrorMessage = "Name is required")]
-        [MaxLength(200, ErrorMessage = "Name can't be longer than 200 characters")]
+        [MaxLength(100, ErrorMessage = "Name can't be longer than 100 characters")]
         public string Name { get; set; } = string.Empty;
 
         [MaxLength(1000, ErrorMessage = "Description can't be longer than 1000 characters")]
