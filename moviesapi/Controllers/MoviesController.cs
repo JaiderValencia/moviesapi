@@ -134,7 +134,7 @@ namespace moviesapi.Controllers
                 if (!deleted)
                     return NotFound($"Movie with ID {movieId} not found.");
 
-                return NoContent();
+                return Ok("Movie deleted successfully.");
             }
             catch (InvalidOperationException ex)
             {
