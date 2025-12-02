@@ -6,14 +6,15 @@ namespace moviesapi.DAL.Models
     public class Movie : Auditbase
     {
         [Required]
-        [MaxLength(200)]
+        [MaxLength(100)]
         public string Name { get; set; } = string.Empty;
 
+        [Required]
         [MaxLength(1000)]
-        public string? Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(10)]
         public string Classification { get; set; } = string.Empty;
 
         [Required]

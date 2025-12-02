@@ -11,7 +11,7 @@ namespace moviesapi.DAL.Dtos.Movie
         public string Name { get; set; } = string.Empty;
 
         [MaxLength(1000, ErrorMessage = "Description can't be longer than 1000 characters")]
-        public string? Description { get; set; }
+        public string? Description { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Classification is required")]
         [MaxLength(10, ErrorMessage = "Classification can't be longer than 10 characters")]

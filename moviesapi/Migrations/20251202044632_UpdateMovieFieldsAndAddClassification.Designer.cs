@@ -12,8 +12,8 @@ using moviesapi.DAL.Models;
 namespace moviesapi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251202043045_AddClassificationToMovies")]
-    partial class AddClassificationToMovies
+    [Migration("20251202044632_UpdateMovieFieldsAndAddClassification")]
+    partial class UpdateMovieFieldsAndAddClassification
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,13 +61,14 @@ namespace moviesapi.Migrations
 
                     b.Property<string>("Classification")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
@@ -76,8 +77,8 @@ namespace moviesapi.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("ReleaseYear")
                         .HasColumnType("int");
