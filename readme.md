@@ -1,6 +1,6 @@
 # Movies API
 
-A RESTful API built with ASP.NET Core 9.0 for managing movies and categories. This project follows a clean architecture pattern with Repository and Service layers.
+A RESTful API built with ASP.NET Core 10.0 for managing movies and categories. This project follows a clean architecture pattern with Repository and Service layers.
 
 ## 🚀 Features
 
@@ -14,7 +14,7 @@ A RESTful API built with ASP.NET Core 9.0 for managing movies and categories. Th
 
 ## 📋 Prerequisites
 
-- [.NET 9.0 SDK](https://dotnet.microsoft.com/download)
+- [.NET 10.0 SDK](https://dotnet.microsoft.com/download)
 - [SQL Server](https://www.microsoft.com/sql-server) (LocalDB, Express, or Full)
 - [Git](https://git-scm.com/)
 
@@ -255,21 +255,22 @@ This project follows a **layered architecture**:
 
 ## 🧰 Technologies
 
-- **ASP.NET Core 9.0** - Web framework
-- **Entity Framework Core 9.0** - ORM
+- **ASP.NET Core 10.0** - Web framework
+- **Entity Framework Core 10.0** - ORM
 - **SQL Server** - Database
 - **AutoMapper 12.0** - Object mapping
 - **Swashbuckle.AspNetCore** - Swagger/OpenAPI
-- **C# 12** - Programming language
+- **C# 13** - Programming language
 
 ## 📦 NuGet Packages
 
 ```xml
 <PackageReference Include="AutoMapper" Version="12.0.1" />
 <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.11" />
-<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0" />
-<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
+<PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.0" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.0" />
 <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
 ```
 
