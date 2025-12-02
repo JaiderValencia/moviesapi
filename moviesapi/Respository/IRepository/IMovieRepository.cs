@@ -6,6 +6,7 @@ namespace moviesapi.Repository.Irepository
     {
         Task<ICollection<Movie>> GetAllMoviesAsync();
         Task<Movie?> GetMovieByIdAsync(int movieId);
+        Task<Movie?> GetMovieByIdForUpdateAsync(int movieId);
         Task<Movie?> GetMovieByNameAsync(string name);
         Task<bool> CreateMovieAsync(Movie movie);
         Task<bool> UpdateMovieAsync(Movie movie);

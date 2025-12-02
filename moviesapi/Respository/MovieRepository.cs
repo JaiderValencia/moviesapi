@@ -47,12 +47,18 @@ namespace moviesapi.Repository
                 .FirstOrDefaultAsync(m => m.Id == movieId);
         }
 
+        public async Task<Movie?> GetMovieByIdForUpdateAsync(int movieId)
+        {
+            return await _context.Movies
+                .FirstOrDefaultAsync(m => m.Id == movieId);
+        }
+
         public async Task<Movie?> GetMovieByNameAsync(string name)
         {
             return await _context.Movies
                 .Include(m => m.Category)
                 .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+                .FirstOrDefaultAsync(m => m.Name.Equals(name));
         }
 
         public async Task<bool> MovieExistsByIdAsync(int id)
@@ -62,7 +68,7 @@ namespace moviesapi.Repository
 
         public async Task<bool> MovieExistsByNameAsync(string name)
         {
-            return await _context.Movies.AsNoTracking().AnyAsync(m => m.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            return await _context.Movies.AsNoTracking().AnyAsync(m => m.Name.Equals(name));
         }
 
         public async Task<bool> UpdateMovieAsync(Movie movie)

@@ -77,10 +77,10 @@ namespace moviesapi.Services
 
         public async Task<MovieDto> UpdateMovieAsync(MovieUpdateCreateDto movieDto, int movieId)
         {            
-            var movieOnDB = await _movieRepository.GetMovieByIdAsync(movieId) ?? throw new InvalidOperationException($"Movie with ID {movieId} not found.");
+            var movieOnDB = await _movieRepository.GetMovieByIdForUpdateAsync(movieId) ?? throw new InvalidOperationException($"Movie with ID {movieId} not found.");
 
             var nameExists = await _movieRepository.MovieExistsByNameAsync(movieDto.Name);
-            if (nameExists && !movieOnDB.Name.Equals(movieDto.Name, StringComparison.OrdinalIgnoreCase))
+            if (nameExists && !movieOnDB.Name.Equals(movieDto.Name))
                 throw new InvalidOperationException($"Movie with name '{movieDto.Name}' already exists.");
             
             var categoryExists = await _categoryRepository.CategoryExistsByIdAsync(movieDto.CategoryId);
