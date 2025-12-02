@@ -8,10 +8,14 @@ namespace moviesapi.DAL.Dtos.Movie
 
         [Required(ErrorMessage = "Name is required")]
         [MaxLength(100, ErrorMessage = "Name can't be longer than 100 characters")]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [MaxLength(1000, ErrorMessage = "Description can't be longer than 1000 characters")]
         public string? Description { get; set; }
+
+        [Required(ErrorMessage = "Classification is required")]
+        [MaxLength(10, ErrorMessage = "Classification can't be longer than 10 characters")]
+        public string Classification { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Release year is required")]
         public int ReleaseYear { get; set; }

@@ -13,6 +13,10 @@ namespace moviesapi.DAL.Models
         public string? Description { get; set; }
 
         [Required]
+        [MaxLength(50)]
+        public string Classification { get; set; } = string.Empty;
+
+        [Required]
         public int ReleaseYear { get; set; }
 
         [Required]
