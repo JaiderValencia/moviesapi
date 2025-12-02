@@ -202,6 +202,8 @@ Content-Type: application/json
 
 {
   "name": "The Matrix",
+  "description": "A computer hacker learns about the true nature of reality and his role in the war against its controllers.",
+  "classification": "R",
   "releaseYear": 1999,
   "duration": 136,
   "categoryId": 1
@@ -213,6 +215,8 @@ Content-Type: application/json
 {
   "id": 1,
   "name": "The Matrix",
+  "description": "A computer hacker learns about the true nature of reality and his role in the war against its controllers.",
+  "classification": "R",
   "releaseYear": 1999,
   "duration": 136,
   "categoryId": 1,
@@ -230,7 +234,9 @@ Content-Type: application/json
 - Name must be unique
 
 ### Movie Validations
-- Name is required (max 200 characters)
+- Name is required (max 100 characters)
+- Description is optional (max 1000 characters)
+- Classification is required (max 10 characters) - e.g., "G", "PG", "PG-13", "R", "NC-17"
 - Release year must be between 1900-2100
 - Duration must be between 1-1000 minutes
 - Category ID is required and must exist
